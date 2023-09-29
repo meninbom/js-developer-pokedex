@@ -89,6 +89,7 @@
     text-align: center;
 }
 .pokemon .stats{
+    margin-top: 5px;
     padding: 0;
     border-radius: .25rem;   
     display: flex;
@@ -138,6 +139,7 @@
     text-align: center;
     font-size: .6rem;
     border-radius: .2rem;
+    max-width: 65.22px;
 }
 
 .pokemon .detail .habilidades .habilidade{
@@ -149,18 +151,19 @@
     text-align: center;
     background-color: white;
 }
-.pokemon .name {
+.pokemon .name > a {
     margin-left: 4px;
     display: grid;
     text-transform: capitalize;
-    color: #fff;
+    color: rgba(0,0,0,1);
+    font-family: 'Pixelify', cursive;
+    text-decoration: none;
 }
 
 .pokemon .detail {
     margin-top: 10px;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
 }
 
@@ -172,7 +175,7 @@
 }
 
 .pokemon .detail .types .type {
-    color: #fff;
+    color: black;
     padding: .25rem;
     margin: .25rem ;
     font-size: .625rem;
@@ -211,7 +214,7 @@
 
 @media screen and (min-width: 380px) {
     .pokemons {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr ;
     }
 }
 

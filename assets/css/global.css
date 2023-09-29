@@ -20,10 +20,11 @@ body {
     height: 100vh;
     padding: 1rem;
 }
-.content > h1{
-    text-align: center;
+.content > a{
+    display: flex;
+    justify-content: center;
     font-family: 'Pixelify', cursive;
-    color: white;
+    margin-bottom: 10px;
     
 }
 

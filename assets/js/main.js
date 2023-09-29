@@ -10,7 +10,7 @@ function convertPokemonToLi(pokemon) {
         <li class="pokemon ${pokemon.type}">
         
         <div class="NN">
-        <span class="name">${pokemon.name}</span> 
+        <span class="name"><a href="https://pokeapi.co/api/v2/pokemon/${pokemon.number}" target="_blank">${pokemon.name}</a></span> 
         <span class="number">#${pokemon.number}</span>
         </div>
 
