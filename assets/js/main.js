@@ -2,7 +2,7 @@ const pokemonList = document.getElementById('pokemonList')
 const loadMoreButton = document.getElementById('loadMoreButton')
 
 const maxRecords = 151
-const limit = 10
+const limit = 12
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
@@ -14,10 +14,11 @@ function convertPokemonToLi(pokemon) {
         <span class="number">#${pokemon.number}</span>
         </div>
 
-        <ol class="stats">
-        Height:${pokemon.height}   
-        Weight:${pokemon.weight} 
-        Experience:${pokemon.baseExperience}</ol>    
+        <ol class="stats"> 
+        <li> HGT:${pokemon.height}  </li> 
+        <li> WHT:${pokemon.weight} </li>
+        <li> XP:${pokemon.baseExperience} </li>
+        </ol>    
 
         <div class="detail">
         
