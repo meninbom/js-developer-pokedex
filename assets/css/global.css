@@ -1,17 +1,30 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Martian Mono', monospace;
+    font-family: 'Pixelify Sans', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: #f6f8fc;
+    background: rgb(238,174,202);
+    background: -moz-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endColorstr="#94bbe9",GradientType=1); 
 }
 
 .content {
     width: 100vw;
     height: 100vh;
     padding: 1rem;
-    background-color: #fff;
+}
+.content > h1{
+    text-align: center;
+    font-family: 'Pixelify', cursive;
+    color: white;
+    
 }
 
 @media screen and (min-width: 992px) {

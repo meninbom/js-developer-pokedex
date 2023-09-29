@@ -90,26 +90,36 @@
 }
 .pokemon .stats{
 
-    color: black;
     padding: 0;
     margin: .25rem ;
+    border-radius: .25rem;    
     font-size: .635rem;
     text-align: center;
-    border-radius: 1rem;
     background-color: white; 
+}
+
+.pokemon .NN{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 .pokemon .number {
     color: #000;
-    opacity: .3;
+    opacity: .5;
     text-align: right;
     font-size: .625rem;
+    margin-left: auto;
 }
 
 .pokemon .detail .types {
     color: #fff;
     padding: .1rem;
     margin: 0;
-    background-color: black;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(114,115,117,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(114,115,117,1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(114,115,117,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#727375",GradientType=1);
     text-align: center;
     font-size: .6rem;
     border-radius: .2rem;
@@ -119,7 +129,11 @@
     padding: .1rem 0;
     margin: 0;
     list-style: none;
-    background-color: black;
+    background: rgb(0,0,0);
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(114,115,117,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(114,115,117,1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(114,115,117,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#727375",GradientType=1);
     color: #fff;
     text-align: center;
     font-size: .6rem;
@@ -138,9 +152,12 @@
 .pokemon .name {
     display: grid;
     text-transform: capitalize;
-    color: #fff;}
+    color: #fff;
+   justify-content: center;
+}
 
 .pokemon .detail {
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -165,6 +182,9 @@
 .pokemon .detail img {
     max-width: 100%;
     height: 70px;
+    border: solid 1px white;
+    background-color: white;
+    border-radius: 1rem;
 }
 
 .pagination {
