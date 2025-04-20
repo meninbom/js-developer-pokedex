@@ -1,38 +1,190 @@
+/* Reset básico e configurações globais */
 * {
-    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-    font-family: 'Dancing Script', cursive;
-    font-family: 'Martian Mono', monospace;
-    font-family: 'Pixelify Sans', cursive;
-    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Define variáveis para temas claro e escuro */
+:root {
+    --background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23'); /* Floresta roxa clara */
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --content-bg: rgba(255, 255, 255, 0.8);
+    --footer-bg: rgba(255, 255, 255, 0.8);
+    --pagination-bg: rgba(255, 255, 255, 0.8);
+    --error-bg: rgba(255, 255, 255, 0.8);
+    --text-color: #333;
+    --accent-color: #ff4444;
+}
+
+.dark-theme {
+    --background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23'); /* Floresta roxa escura */
+    --header-bg: rgba(0, 0, 0, 0.8);
+    --content-bg: rgba(0, 0, 0, 0.8);
+    --footer-bg: rgba(0, 0, 0, 0.8);
+    --pagination-bg: rgba(0, 0, 0, 0.8);
+    --error-bg: rgba(0, 0, 0, 0.8);
+    --text-color: #f0f0f0;
+    --accent-color: #ff6666;
+}
+
+/* Define a fonte padrão e fundo temático */
 body {
-    background: rgb(238,174,202);
-    background: -moz-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endColorstr="#94bbe9",GradientType=1); 
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #f0f0f0; /* Fallback */
+    line-height: 1.6;
 }
 
+/* Estiliza o conteúdo principal */
 .content {
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: var(--content-bg);
+    border-radius: 1rem;
 }
-.content > a{
+
+/* Estiliza o logo da PokéAPI */
+.pokeapi-logo {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Estiliza o cabeçalho */
+.header {
     display: flex;
     justify-content: center;
-    font-family: 'Pixelify', cursive;
-    margin-bottom: 10px;
-    
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--header-bg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+
+.header h1 {
+    font-family: 'Pixelify Sans', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Estiliza a seção de Pokémon */
+.pokemon-section {
+    margin-bottom: 2rem;
+}
+
+/* Estiliza a lista de Pokémon */
+.pokemons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+}
+
+/* Estiliza a paginação */
+.pagination {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--pagination-bg);
+    border-radius: 0.5rem;
+}
+
+#loadMoreButton {
+    padding: 0.75rem 1.5rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loadMoreButton:hover {
+    background-color: #cc3333;
+}
+
+#loadMoreButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Estiliza o rodapé */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--footer-bg);
+    border-radius: 1rem;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Classe para elementos ocultos visualmente, mas acessíveis */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Estiliza mensagens de erro */
+.error {
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+    background-color: var(--error-bg);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+/* Media queries para responsividade */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .pokeapi-logo {
+        max-width: 100px;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+
+    .pokemons {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
 }
 
 @media screen and (min-width: 992px) {
     .content {
-        max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 }

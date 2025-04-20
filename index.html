@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    rel="icon"
-    type="image/jpeg"
-    href="/assets/images-removebg-preview.png"/>
-    <title>POKEDEX</title>
+    <meta name="description" content="Uma Pokédex interativa que exibe informações sobre Pokémon usando a PokéAPI.">
+    <meta name="keywords" content="Pokédex, Pokémon, PokéAPI, JavaScript">
+    <meta name="author" content="Seu Nome">
+
+    <title>Pokédex - Explore Pokémon</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" media="all">
 
     <!-- Font Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,37 +26,41 @@
     <!-- Font Pixel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Martian+Mono:wght@800&family=Pixelify+Sans&family=Roboto:ital,wght@0,100;0,300;0,500;0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Nosso CSS -->
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/pokedex.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/pokedex.css">
 </head>
-
 <body>
- 
-    <section class="content">
-
-        <a href="https://pokeapi.co" target="_blank">
-            <img src="/assets/pokeapi_256.3fa72200.png" alt="">
+    <header class="header">
+        <h1>Pokédex</h1>
+        <a href="https://pokeapi.co" target="_blank" aria-label="Visitar o site da PokéAPI">
+            <img src="assets/pokeapi_256.3fa72200.png" alt="Logo da PokéAPI" class="pokeapi-logo">
         </a>
+    </header>
 
-        <ol id="pokemonList" class="pokemons">
-            <!-- ..... Pokemons here ..... -->
-        </ol>
-        
+    <main class="content">
+        <section class="pokemon-section" aria-labelledby="pokedex-title">
+            <h2 id="pokedex-title" class="visually-hidden">Lista de Pokémon</h2>
+            <ul id="pokemonList" class="pokemons" role="list">
+                <!-- Pokémon serão inseridos aqui pelo JavaScript -->
+            </ul>
+            <div class="pagination">
+                <button id="loadMoreButton" type="button" aria-label="Carregar mais Pokémon">
+                    Carregar Mais
+                </button>
+            </div>
+        </section>
+    </main>
 
-        <div class="pagination">
-            <button id="loadMoreButton" type="button">
-                Load More
-            </button>
-        </div>
-    </section>
+    <footer class="footer">
+        <p>Desenvolvido com 💙 usando a <a href="https://pokeapi.co" target="_blank">PokéAPI</a></p>
+    </footer>
 
     <!-- Nosso JS -->
-    <script src="/assets/js/pokemon-model.js"></script>
-    <script src="/assets/js/poke-api.js"></script>
-    <script src="/assets/js/main.js"></script>
+    <script src="./assets/js/pokemon-model.js"></script>
+    <script src="./assets/js/poke-api.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
-
 </html>
